@@ -1,0 +1,32 @@
+📌 Required TSP Configuration
+
+Create a Transaction Security Policy:
+
+Step 1: Setup → Transaction Security → New Policy
+Step 2: Event Type → Login Event
+Step 3: Condition →
+Risk Level Equals HIGH
+AND
+User.ProfileName CONTAINS "Retailer"
+
+Step 4: Action → Invoke Apex Class
+
+Select:
+RetailerAnomalyHandler
+
+(Optional)
+
+Enable:
+✔ Block login
+✔ Require MFA
+✔ Logout user
+
+⚠ Sandbox Notes
+
+Since you asked earlier:
+
+❗ Sandbox anomaly scoring is OFF.
+
+So TSP with “RiskLevel = HIGH” will not fire in Sandbox.
+
+But the solution works perfectly in Production.
